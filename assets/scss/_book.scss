@@ -103,7 +103,11 @@ $animation-duration : 20s;
 /* the more pieces you have, the smoother the bend is */
 
 @keyframes page {
-  15% {
+  
+  10% {
+    transform: rotateY(0deg);
+  }
+  25% {
     transform: rotateY(-15deg);
   }
 
@@ -133,7 +137,12 @@ $animation-duration : 20s;
 }
 
 @keyframes book {
-  15% {
+  
+  10% {
+    box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
+  }
+  
+  25% {
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 0 50px -140px;
   }
 
@@ -188,11 +197,11 @@ $animation-duration : 20s;
 
 @keyframes shadow {
   $initial-state: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
-  0% {
+  10% {
     box-shadow: $initial-state;
   }
 
-  15% {
+  25% {
     box-shadow: inset rgba(83, 53, 13, 0.3) -350px 0 150px -140px;
   }
 

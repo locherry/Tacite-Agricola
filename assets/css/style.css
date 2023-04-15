@@ -1,16 +1,53 @@
 /* remember to use - transform-style: preserve-3d; */
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 main {
-  padding: 4em 10%;
-  /* overflow: hidden; */
   background-color: lightblue;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+section {
+  padding: 4em 10%;
+}
+
+.section-changer {
+  position: relative;
+  transform: scaleY(0.5);
+  transform: translate(0, 20);
+}
+.section-changer svg {
+  margin: 0;
+  z-index: 99999999999;
+  bottom: 100%;
+  left: 0;
+  position: absolute;
+}
+.section-changer svg use {
+  fill: dodgerblue;
+  stroke: dodgerblue;
+}
+
+section#atypique {
+  padding-top: 0;
+  border: 4px solid dodgerblue;
+  background-color: dodgerblue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   font-family: sans-serif;
 }
 
@@ -167,7 +204,10 @@ header nav a.link:hover::before {
 
 /* the more pieces you have, the smoother the bend is */
 @-webkit-keyframes page {
-  15% {
+  10% {
+    transform: rotateY(0deg);
+  }
+  25% {
     transform: rotateY(-15deg);
   }
   50% {
@@ -181,7 +221,10 @@ header nav a.link:hover::before {
   }
 }
 @keyframes page {
-  15% {
+  10% {
+    transform: rotateY(0deg);
+  }
+  25% {
     transform: rotateY(-15deg);
   }
   50% {
@@ -206,7 +249,10 @@ header nav a.link:hover::before {
 }
 
 @-webkit-keyframes book {
-  15% {
+  10% {
+    box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
+  }
+  25% {
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 0 50px -140px;
   }
   50% {
@@ -221,7 +267,10 @@ header nav a.link:hover::before {
 }
 
 @keyframes book {
-  15% {
+  10% {
+    box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
+  }
+  25% {
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 0 50px -140px;
   }
   50% {
@@ -272,10 +321,10 @@ header nav a.link:hover::before {
 }
 
 @-webkit-keyframes shadow {
-  0% {
+  10% {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
   }
-  15% {
+  25% {
     box-shadow: inset rgba(83, 53, 13, 0.3) -350px 0 150px -140px;
   }
   50% {
@@ -290,10 +339,10 @@ header nav a.link:hover::before {
 }
 
 @keyframes shadow {
-  0% {
+  10% {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
   }
-  15% {
+  25% {
     box-shadow: inset rgba(83, 53, 13, 0.3) -350px 0 150px -140px;
   }
   50% {

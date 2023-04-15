@@ -1,18 +1,59 @@
-*{
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
+body, html {
+    overflow-x: hidden;
+}
 main {
-    padding: 4em 10%;
-    /* overflow: hidden; */
     background-color: lightblue;
 }
 
-h1,h2,h3,h4,h5,h6,p,a {
+section {
+    padding: 4em 10%;
+}
+
+.section-changer {
+    // border: 100px solid dodgerblue;
+    position: relative;
+    transform: scaleY(0.5) ;
+    transform: translate(0,20);
+
+
+    svg {
+        margin: 0;
+        z-index: 99999999999;
+        bottom: 100%;
+        left: 0;
+        position: absolute;
+
+        use {
+            fill: dodgerblue;
+            stroke: dodgerblue;
+            // stroke-width: 20;
+        }
+    }
+}
+
+section#atypique {
+    padding-top: 0;
+    border: 4px solid dodgerblue;
+    background-color: dodgerblue;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
     font-family: sans-serif;
 }
 
-p{
+p {
     text-align: justify;
 }
