@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -13,8 +14,19 @@ main {
   background-color: lightblue;
 }
 
-section {
+section .section-content {
   padding: 4em 10%;
+}
+section#home {
+  background: linear-gradient(60deg, rgb(84, 58, 183) 0%, rgb(0, 172, 193) 100%);
+}
+section#review {
+  color: white;
+  background: linear-gradient(60deg, rgb(84, 58, 183) 0%, rgb(0, 172, 193) 100%);
+}
+section#atypique {
+  padding-top: 0;
+  background-color: white;
 }
 
 .section-changer {
@@ -32,12 +44,6 @@ section {
 .section-changer svg use {
   fill: dodgerblue;
   stroke: dodgerblue;
-}
-
-section#atypique {
-  padding-top: 0;
-  border: 4px solid dodgerblue;
-  background-color: dodgerblue;
 }
 
 h1,
@@ -106,14 +112,27 @@ header nav a.link:hover::before {
   right: 0;
 }
 
-.book-container {
-  perspective: 900px;
-  width: 350px;
-  height: 350px;
-  transform: scale(0.5);
+.large-book-container {
+  position: relative;
+  width: 250px;
+  height: 270px;
+  float: left;
+  margin-right: 2em;
 }
 
-#flip {
+.book-container {
+  perspective: 900px;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  transform: scale(0.5) translate(-50%, -45%);
+  margin: 0;
+  padding: 0;
+  /* avoid pages overlap */
+  /* the more pieces you have, the smoother the bend is */
+  /* bookmark */
+}
+.book-container #flip {
   height: 350px;
   width: 253px;
   position: absolute;
@@ -123,8 +142,7 @@ header nav a.link:hover::before {
   transform-style: preserve-3d;
   transform-origin: 0 0 0;
 }
-
-#flip div {
+.book-container #flip div {
   height: 350px;
   width: 24px;
   position: absolute;
@@ -133,76 +151,58 @@ header nav a.link:hover::before {
   transform-style: preserve-3d;
   background-size: 253px 350px;
 }
-
-#flip #front,
-#flip #front div {
+.book-container #flip #front,
+.book-container #flip #front div {
   background-image: url("../img/couverture.jpg");
   box-shadow: inset rgba(255, 255, 255, 0.3) 0px -1px 0 0, #35582c 0px 1px 0px 0px;
 }
-
-#flip #front > div > div > div > div > div > div > div > div > div > div {
+.book-container #flip #front > div > div > div > div > div > div > div > div > div > div {
   box-shadow: inset rgba(255, 255, 255, 0.3) -1px -1px 0 0, #35582c 1px 1px 0px 0px;
 }
-
-#flip #back {
+.book-container #flip #back {
   transform: rotateY(0.4deg);
   transform-origin: -100% 0;
 }
-
-/* avoid pages overlap */
-#flip #back,
-#flip #back div {
+.book-container #flip #back,
+.book-container #flip #back div {
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/164210/map1_.jpg);
 }
-
-#flip > div {
+.book-container #flip > div {
   left: 0;
   background-position-x: 0;
 }
-
-#flip div > div {
+.book-container #flip div > div {
   background-position-x: -23px;
   -webkit-animation: page 20s ease-in-out infinite;
           animation: page 20s ease-in-out infinite;
 }
-
-#flip div > div > div {
+.book-container #flip div > div > div {
   background-position-x: -46px;
 }
-
-#flip div > div > div > div {
+.book-container #flip div > div > div > div {
   background-position-x: -69px;
 }
-
-#flip div > div > div > div > div {
+.book-container #flip div > div > div > div > div {
   background-position-x: -92px;
 }
-
-#flip div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div {
   background-position-x: -115px;
 }
-
-#flip div > div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div > div {
   background-position-x: -138px;
 }
-
-#flip div > div > div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div > div > div {
   background-position-x: -161px;
 }
-
-#flip div > div > div > div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div > div > div > div {
   background-position-x: -184px;
 }
-
-#flip div > div > div > div > div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div > div > div > div > div {
   background-position-x: -207px;
 }
-
-#flip div > div > div > div > div > div > div > div > div > div > div {
+.book-container #flip div > div > div > div > div > div > div > div > div > div > div {
   background-position-x: -229px;
 }
-
-/* the more pieces you have, the smoother the bend is */
 @-webkit-keyframes page {
   10% {
     transform: rotateY(0deg);
@@ -237,7 +237,7 @@ header nav a.link:hover::before {
     transform: rotateY(0deg);
   }
 }
-#book {
+.book-container #book {
   width: 248px;
   height: 350px;
   position: absolute;
@@ -247,7 +247,6 @@ header nav a.link:hover::before {
   transform-style: preserve-3d;
   transform-origin: 0 0 0;
 }
-
 @-webkit-keyframes book {
   10% {
     box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
@@ -265,7 +264,6 @@ header nav a.link:hover::before {
     box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
   }
 }
-
 @keyframes book {
   10% {
     box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
@@ -283,7 +281,7 @@ header nav a.link:hover::before {
     box-shadow: inset rgba(0, 0, 0, 0.2) 510px 0 50px -140px;
   }
 }
-#book #top {
+.book-container #book #top {
   -webkit-animation: book 20s ease-in-out infinite;
           animation: book 20s ease-in-out infinite;
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/164210/map2.jpg);
@@ -296,8 +294,7 @@ header nav a.link:hover::before {
   left: 0;
   top: 0;
 }
-
-#book #bottom {
+.book-container #book #bottom {
   background: #e7ded1;
   box-shadow: rgba(83, 53, 13, 0.2) 4px 2px 1px, #35582c 1px 1px 0px 0px;
   height: 350px;
@@ -307,8 +304,7 @@ header nav a.link:hover::before {
   left: 0;
   top: 0;
 }
-
-#book #shadow {
+.book-container #book #shadow {
   -webkit-animation: shadow 20s ease-in-out infinite;
           animation: shadow 20s ease-in-out infinite;
   box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
@@ -319,7 +315,6 @@ header nav a.link:hover::before {
   top: 0;
   transform: translateZ(-40px);
 }
-
 @-webkit-keyframes shadow {
   10% {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
@@ -337,7 +332,6 @@ header nav a.link:hover::before {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
   }
 }
-
 @keyframes shadow {
   10% {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
@@ -355,7 +349,7 @@ header nav a.link:hover::before {
     box-shadow: inset rgba(83, 53, 13, 0) -200px 0 150px -140px;
   }
 }
-#book #front {
+.book-container #book #front {
   background: -webkit-linear-gradient(top, #fcf6ea, #d8d1c3);
   background-size: 100% 2px;
   box-shadow: inset #c2bba2 3px 0 0px, #35582c -2px 1px 0px 0px;
@@ -369,8 +363,7 @@ header nav a.link:hover::before {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
-#book #right {
+.book-container #book #right {
   background: -webkit-linear-gradient(left, #ddd2bb, #bdb3a0);
   background-size: 2px 100%;
   box-shadow: inset rgba(0, 0, 0, 0) 0 0 0 20px;
@@ -382,8 +375,7 @@ header nav a.link:hover::before {
   transform: rotateY(90deg);
   transform-origin: 0 50%;
 }
-
-h4 {
+.book-container h4 {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -393,15 +385,12 @@ h4 {
   font-family: sans-serif;
   color: rgba(0, 0, 0, 0.3);
 }
-
-/* bookmark */
-#bookmark {
+.book-container #bookmark {
   position: absolute;
   transform: translate3d(20px, 350px, -16px);
   transform-style: preserve-3d;
 }
-
-#bookmark div {
+.book-container #bookmark div {
   background: rgb(151, 88, 88);
   box-shadow: rgb(133, 77, 77) 1px 0;
   height: 10px;
@@ -412,16 +401,13 @@ h4 {
   transform-origin: 50% 0;
   transform-style: preserve-3d;
 }
-
-#bookmark > div > div {
+.book-container #bookmark > div > div {
   background: linear-gradient(to top, rgb(151, 88, 88), rgb(189, 123, 123), rgb(151, 88, 88));
 }
-
-#bookmark > div > div > div {
+.book-container #bookmark > div > div > div {
   background: linear-gradient(to top, rgb(151, 88, 88), rgb(133, 77, 77));
 }
-
-#bookmark > div > div > div > div {
+.book-container #bookmark > div > div > div > div {
   background: none;
   border-top: 0px solid transparent;
   border-right: 10px solid rgb(133, 77, 77);
@@ -430,8 +416,7 @@ h4 {
   height: 0;
   width: 0;
 }
-
-#bookmark-shadow {
+.book-container #bookmark-shadow {
   background: linear-gradient(to top, rgba(83, 53, 13, 0.25), rgba(83, 53, 13, 0.11));
   height: 15px;
   width: 20px;
@@ -440,6 +425,15 @@ h4 {
   transform-origin: 0 0;
 }
 
+@media only screen and (max-width: 800px) {
+  .large-book-container {
+    position: relative;
+    width: 250px;
+    height: 270px;
+    float: none;
+    margin: 0 auto;
+  }
+}
 .agricola-bubble {
   height: 50vh;
   position: relative;
@@ -461,10 +455,37 @@ h4 {
 .agricola-bubble div.chat-bubble .button-container {
   display: flex;
   justify-content: right;
+  margin-top: 0.5rem;
 }
 .agricola-bubble div.chat-bubble .button-container button {
   cursor: pointer;
   margin-left: 0.3em;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+.agricola-bubble div.chat-bubble .button-container button:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+.agricola-bubble div.chat-bubble .button-container button:focus {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+}
+.agricola-bubble div.chat-bubble .button-container button:disabled {
+  cursor: auto;
+  color: grey;
+  background-color: initial;
+  border-color: initial;
+  box-shadow: initial;
 }
 .agricola-bubble div.chat-bubble::after {
   content: "";
@@ -482,6 +503,7 @@ h4 {
   right: 0;
   bottom: 5%;
   height: 90%;
+  border-radius: 40px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -508,4 +530,102 @@ h4 {
     position: inherit;
     height: 300px;
   }
+}
+.waves-container.reverse {
+  transform: scaleY(-1);
+}
+.waves-container .flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.waves-container .waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+.waves-container .content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+.waves-container .parallax > use {
+  -webkit-animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+          animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.waves-container .parallax > use:nth-child(1) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+.waves-container .parallax > use:nth-child(2) {
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+.waves-container .parallax > use:nth-child(3) {
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+.waves-container .parallax > use:nth-child(4) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+@-webkit-keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .waves-container .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .waves-container .content {
+    height: 30vh;
+  }
+  .waves-container h1 {
+    font-size: 24px;
+  }
+}
+
+section#review h1 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2em;
+}
+section#review h1:after {
+  position: absolute;
+  content: "";
+  top: 140%;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }/*# sourceMappingURL=style.css.map */
