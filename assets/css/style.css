@@ -78,10 +78,17 @@ p {
 footer {
   background-color: white;
   padding: 1em 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-footer p {
+footer p, footer a {
   font-family: "Constantine", sans-serif;
   text-align: center;
+}
+footer a {
+  margin-top: 0.5em;
+  color: dodgerblue;
 }
 
 .large-book-container {
@@ -420,6 +427,7 @@ footer p {
   border-radius: 1em;
   max-width: 50%;
   min-height: 1em;
+  z-index: 2;
 }
 .agricola-bubble div.chat-bubble p {
   font-family: "Constantine", sans-serif;
@@ -924,9 +932,6 @@ nav .nav-brand {
   font-size: larger;
   color: white;
   background: linear-gradient(60deg, rgb(84, 58, 183) 0%, rgb(0, 172, 193) 100%);
-}
-nav .nav-brand:visited {
-  color: initial;
 }
 nav .nav-brand .logo {
   max-width: 130px;
