@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -876,6 +877,38 @@ section#testim .cont .testim-card.inactive p {
 }
 
 /*|| Navigation Bar Styles*/
+header .scroll-top {
+  position: fixed;
+  z-index: 1000000000000000100;
+  right: 20px;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #bebebe;
+  padding: 5px;
+  line-height: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 2px #8b8b8b;
+}
+header .scroll-top::before {
+  content: "➜";
+  color: #282828;
+  position: absolute;
+  left: 25%;
+  bottom: 50%;
+  transform: rotate(-90deg);
+}
+header .scroll-top:focus, header .scroll-top:hover {
+  background-color: #ea830e;
+}
+header .scroll-top.visible {
+  opacity: 1;
+  bottom: 20px;
+}
+
 nav {
   width: 100%;
   position: fixed;

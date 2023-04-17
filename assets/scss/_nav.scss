@@ -1,4 +1,38 @@
 /*|| Navigation Bar Styles*/
+header {
+    .scroll-top{
+        position: fixed;
+        z-index: 999999999999999999;
+        right: 20px;
+        bottom: 0;
+        width: 30px;
+        height: 30px;
+        background-color: #bebebe;
+        padding: 5px;
+        line-height: 2px;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+        box-shadow: 0px 0px 5px 2px  #8b8b8b;
+        &::before{
+            content: '➜';
+            color:#282828;
+            position: absolute;
+            left: 25%;
+            bottom: 50%;
+            transform: rotate(-90deg);
+        }
+        &:focus, &:hover{
+            background-color: #ea830e;
+        }
+        &.visible{
+            opacity: 1;
+            bottom: 20px;
+        }
+    }
+}
+
 nav {
     width: 100%;
     position: fixed;

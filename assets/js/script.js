@@ -226,7 +226,6 @@ const observer = new IntersectionObserver((entries) => {
   const sectionList = [...sections];
   const linkList = [...document.querySelectorAll(".nav-link")];
   for (const entry of entries) {
-    console.log(entries, entry);
     if (entry.isIntersecting) {
       linkList.forEach((link) => {
         link.classList.remove("active");
@@ -234,8 +233,15 @@ const observer = new IntersectionObserver((entries) => {
       linkList[sectionList.indexOf(entry.target)].classList.add("active");
     }
   }
+  if(!document.querySelector('.nav-link').classList.contains('active')){
+    document.querySelector('.scroll-top').classList.add('visible')
+  } else if (document.querySelector('.scroll-top').classList.contains('visible')){
+    document.querySelector('.scroll-top').classList.remove('visible')
+  }
 }, options);
+
 const sections = document.querySelectorAll("section");
 sections.forEach((section) => {
   observer.observe(section);
 });
+
