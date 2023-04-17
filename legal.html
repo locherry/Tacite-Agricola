@@ -7,32 +7,50 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <title>Tacite - Agricola | critique</title>
-
     <style>
       #legal .section-content {
         min-height: 100vh;
         padding-top: 8em;
       }
     </style>
+    <!-- Needed for AOS animation on scroll behaviour -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
   </head>
   <body>
+    <div class="loading-screen">
+      <div class="loading-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <span>Loading</span>
+      </div>
+    </div>
     <header>
       <nav>
         <svg class="hamburger" viewBox="0 0 100 100">
-            <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"></path>
-            <path class="line" d="m 70,50 h -40"></path>
-            <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"></path>
+          <path
+            class="line top"
+            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+          ></path>
+          <path class="line" d="m 70,50 h -40"></path>
+          <path
+            class="line bottom"
+            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+          ></path>
         </svg>
-        <a class="nav-brand" href="./#">
-            Tacite - Agricola
-        </a>
+        <a class="nav-brand" href="./#"> Tacite - Agricola </a>
         <div class="nav-list">
           <a href="./#home" class="nav-link">Acceuil</a>
           <a href="./#atypique-mark" class="nav-link">Une Bédè atypique</a>
           <a href="./#testimonial-mark" class="nav-link">Notre avis</a>
         </div>
         <div></div>
-    </nav>
+      </nav>
     </header>
     <main>
       <section id="legal">
@@ -63,7 +81,7 @@
       <a href="legal.html">mentions légales</a>
     </footer>
   </body>
-  
+
   <script>
     // Activate mobile menu
     const hamburger = document.querySelector(".hamburger");
@@ -76,5 +94,15 @@
 
     hamburger.addEventListener("click", menuActivate);
     menu.addEventListener("click", menuActivate);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.documentElement.style.overflow = "hidden";
+      setTimeout(() => {
+        document.documentElement.style.overflow = "visible";
+
+        document.querySelector(".loading-screen").classList.add("invisible");
+        window.scrollTo(0, 0);
+      }, 3000);
+    });
   </script>
 </html>
