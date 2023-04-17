@@ -8,39 +8,59 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <title>Tacite - Agricola | critique</title>
     <script src="./assets/js/script.js" defer></script>
+
+    <!-- Needed for AOS animation on scroll behaviour -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <nav>
-        <svg class="hamburger" viewBox="0 0 100 100">
-            <path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"></path>
-            <path class="line" d="m 70,50 h -40"></path>
-            <path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"></path>
+      <nav data-aos="fade-down">
+        <svg class="hamburger" viewBox="0 0 100 100" data-aos="fade-right">
+          <path
+            class="line top"
+            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+          ></path>
+          <path class="line" d="m 70,50 h -40"></path>
+          <path
+            class="line bottom"
+            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+          ></path>
         </svg>
-        <a class="nav-brand" href="./#">
-            Tacite - Agricola
+        <a class="nav-brand" href="./#" data-aos="fade-right">
+          Tacite - Agricola
         </a>
-        <div class="nav-list">
+        <div class="nav-list" data-aos="fade-left">
           <a href="./#home" class="nav-link">Acceuil</a>
           <a href="./#atypique-mark" class="nav-link">Une Bédè atypique</a>
           <a href="./#testimonial-mark" class="nav-link">Notre avis</a>
         </div>
         <div></div>
-    </nav>
-    <a href="./#home" class="scroll-top" title="remonter jusqu'en haut de la page"></a>
+      </nav>
+      <a
+        href="./#home"
+        class="scroll-top"
+        title="remonter jusqu'en haut de la page"
+      ></a>
     </header>
     <main>
       <section id="home">
         <div class="section-content">
-          <div class="agricola-bubble">
+          <div
+            class="agricola-bubble"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            data-aos-offset="500"
+          >
             <div class="chat-bubble">
               <p-data>
                 Bienvenue, je suis Agricola,
                 <br />
-                Tacite, mon beau-père vous a sans doute déjà parlé de moi. 
-                Enfin, c'était sans doute un pretexte pour écrire un livre sur la géographie de la Bretagne...
-                Curieusement, mes aventures de général romain ont inspiré des auteurs contemporains, je suis presque devenu une star de la Bande Dessinée!
-
+                Tacite, mon beau-père vous a sans doute déjà parlé de moi.
+                Enfin, c'était sans doute un pretexte pour écrire un livre sur
+                la géographie de la Bretagne... Curieusement, mes aventures de
+                général romain ont inspiré des auteurs contemporains, je suis
+                presque devenu une star de la Bande Dessinée!
               </p-data>
               <p-data>
                 Je ne sais pas quoi écrire,
@@ -51,8 +71,11 @@
                 dolorem itaque.
               </p-data>
               <p-data>
-                Il me faudrait un peu d'inventivité pour trouver quoi dire, aidez moi! 
-                Beatae ducimus dicta aut dolor facere ex commodi excepturi illo debitis error! Consectetur soluta debitis sunt aliquid cumque ipsam praesentium qui. Deleniti rerum quasi fuga. Quam porro repellat doloremque sapiente.
+                Il me faudrait un peu d'inventivité pour trouver quoi dire,
+                aidez moi! Beatae ducimus dicta aut dolor facere ex commodi
+                excepturi illo debitis error! Consectetur soluta debitis sunt
+                aliquid cumque ipsam praesentium qui. Deleniti rerum quasi fuga.
+                Quam porro repellat doloremque sapiente.
               </p-data>
               <div class="button-container">
                 <button class="arrow previous" title="précédent" disabled="">
@@ -111,41 +134,50 @@
       </div> -->
       <section id="atypique">
         <div class="section-content">
-          <h1>Une BD atypique</h1>
-          <p>
-            Ipsam, optio. Cumque, fugit? Perspiciatis ipsam ipsum consectetur,
-            harum magnam eligendi, consequatur tenetur deleniti perferendis, hic
-            sapiente odio nam a minima veritatis vel? Sequi explicabo veritatis
-            dolores laborum delectus natus iste beatae ut quae. Magni atque ex
-            laborum, inventore blanditiis earum eum, temporibus nulla placeat
-            neque repellat aspernatur nesciunt quia doloribus repudiandae facere
-            quod voluptas necessitatibus nisi! Illo odit quis error accusamus
-            optio porro.
-          </p>
+          <div data-aos="fade-up" data-aos="zoom-in-right">
+            <h1>Une BD atypique</h1>
+            <p>
+              Ipsam, optio. Cumque, fugit? Perspiciatis ipsam ipsum consectetur,
+              harum magnam eligendi, consequatur tenetur deleniti perferendis,
+              hic sapiente odio nam a minima veritatis vel? Sequi explicabo
+              veritatis dolores laborum delectus natus iste beatae ut quae.
+              Magni atque ex laborum, inventore blanditiis earum eum, temporibus
+              nulla placeat neque repellat aspernatur nesciunt quia doloribus
+              repudiandae facere quod voluptas necessitatibus nisi! Illo odit
+              quis error accusamus optio porro.
+            </p>
+          </div>
+
           <br />
-          <h2>Un traitement plastique hors norme</h2>
-          <div class="large-book-container">
-            <div class="book-container">
-              <div id="book">
-                <div id="top"></div>
-                <div id="front"></div>
-                <div id="right"></div>
-                <div id="bottom"></div>
-                <div id="shadow"></div>
-                <div id="bookmark">
-                  <div>
+          <div>
+            <h2 data-aos="fade-up">Un traitement plastique hors norme</h2>
+            <p data-aos="fade-up">
+              Ea, nesciunt, voluptatum culpa quaerat voluptatibus ad, odit nisi
+              architecto numquam quis fugit mollitia laudantium ratione earum
+              doloremque ullam deleniti nulla quos debitis. Odit, ipsam neque!
+              Eligendi vitae nobis amet.
+            </p>
+            <div class="large-book-container" data-aos="fade-up-right">
+              <div class="book-container">
+                <div id="book">
+                  <div id="top"></div>
+                  <div id="front"></div>
+                  <div id="right"></div>
+                  <div id="bottom"></div>
+                  <div id="shadow"></div>
+                  <div id="bookmark">
                     <div>
                       <div>
-                        <div></div>
+                        <div>
+                          <div></div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <div id="bookmark-shadow"></div>
                 </div>
-                <div id="bookmark-shadow"></div>
-              </div>
-              <div id="flip">
-                <div id="front">
-                  <div>
+                <div id="flip">
+                  <div id="front">
                     <div>
                       <div>
                         <div>
@@ -154,7 +186,9 @@
                               <div>
                                 <div>
                                   <div>
-                                    <div></div>
+                                    <div>
+                                      <div></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -164,9 +198,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div id="back">
-                  <div>
+                  <div id="back">
                     <div>
                       <div>
                         <div>
@@ -175,7 +207,9 @@
                               <div>
                                 <div>
                                   <div>
-                                    <div></div>
+                                    <div>
+                                      <div></div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -188,51 +222,67 @@
                 </div>
               </div>
             </div>
+
+            <p data-aos="fade-up-left">
+              Maiores exercitationem quaerat sunt sit distinctio magni sequi
+              mollitia deleniti eos, suscipit molestias beatae sapiente quos
+              veniam odit odio? Voluptatum fugiat nihil magni, adipisci enim
+              pariatur? Explicabo quam debitis esse! Ea, nesciunt, voluptatum
+              culpa quaerat voluptatibus ad, odit nisi architecto numquam quis
+              fugit mollitia laudantium ratione earum doloremque ullam deleniti
+              nulla quos debitis. Odit, ipsam neque! Eligendi vitae nobis amet.
+              Dicta laboriosam eligendi consequuntur commodi ea id laborum,
+              repudiandae in sint repellendus ducimus incidunt nihil aliquid
+              consequatur reiciendis minima porro ex et quidem eveniet pariatur
+              tenetur odit. Quia, nobis nemo. Quos facilis architecto unde at
+              velit rem. Ipsam quibusdam nihil deleniti dolorem architecto,
+              nobis non inventore eos obcaecati, id fugiat natus cupiditate vel
+              labore officiis aliquid! Perspiciatis eos vero minus. Ipsum
+              distinctio sed unde nemo iste blanditiis necessitatibus ipsam, eos
+              quos at maxime quisquam vitae error itaque amet perferendis nisi.
+              Non ullam maxime dignissimos qui dolore ab dolorem earum
+              praesentium. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Dolores, consequuntur aliquid tempora natus, quibusdam
+              praesentium in, autem maiores explicabo cum mollitia iure ut.
+              Eligendi, officiis ipsa?
+            </p>
+            <p data-aos="fade-up">
+              Cumque, fugit? Perspiciatis ipsam ipsum consectetur, harum magnam
+              eligendi, consequatur tenetur deleniti perferendis, hic sapiente
+              odio nam a minima veritatis vel? Sequi explicabo veritatis dolores
+              laborum delectus natus iste beatae ut quae. Magni atque ex
+              laborum, inventore blanditiis earum eum, temporibus nulla placeat
+              neque repellat aspernatur nesciunt quia doloribus repudiandae
+              facere quod voluptas necessitatibus nisi! Illo odit quis error
+              accusamus optio porro.
+            </p>
+            <p data-aos="fade-up">
+              Sequi explicabo veritatis dolores laborum delectus natus iste
+              beatae ut quae. Magni atque ex laborum, inventore blanditiis earum
+              eum, temporibus nulla placeat neque repellat aspernatur nesciunt
+              quia doloribus repudiandae facere quod voluptas necessitatibus
+              nisi! Illo odit quis error accusamus optio porro.
+            </p>
           </div>
 
-          <p>
-            Maiores exercitationem quaerat sunt sit distinctio magni sequi mollitia deleniti eos, suscipit molestias beatae sapiente quos veniam odit odio? Voluptatum fugiat nihil magni, adipisci enim pariatur? Explicabo quam debitis esse!
-            Ea, nesciunt, voluptatum culpa quaerat voluptatibus ad, odit nisi architecto numquam quis fugit mollitia laudantium ratione earum doloremque ullam deleniti nulla quos debitis. Odit, ipsam neque! Eligendi vitae nobis amet.
-            Dicta laboriosam eligendi consequuntur commodi ea id laborum, repudiandae in sint repellendus ducimus incidunt nihil aliquid consequatur reiciendis minima porro ex et quidem eveniet pariatur tenetur odit. Quia, nobis nemo.
-            Quos facilis architecto unde at velit rem. Ipsam quibusdam nihil deleniti dolorem architecto, nobis non inventore eos obcaecati, id fugiat natus cupiditate vel labore officiis aliquid! Perspiciatis eos vero minus.
-            Ipsum distinctio sed unde nemo iste blanditiis necessitatibus ipsam, eos quos at maxime quisquam vitae error itaque amet perferendis nisi. Non ullam maxime dignissimos qui dolore ab dolorem earum praesentium.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-            consequuntur aliquid tempora natus, quibusdam praesentium in, autem
-            maiores explicabo cum mollitia iure ut. Eligendi, officiis ipsa?
-          </p>
-          <p>
-            Cumque, fugit? Perspiciatis ipsam ipsum consectetur, harum magnam
-            eligendi, consequatur tenetur deleniti perferendis, hic sapiente
-            odio nam a minima veritatis vel? Sequi explicabo veritatis dolores
-            laborum delectus natus iste beatae ut quae. Magni atque ex laborum,
-            inventore blanditiis earum eum, temporibus nulla placeat neque
-            repellat aspernatur nesciunt quia doloribus repudiandae facere quod
-            voluptas necessitatibus nisi! Illo odit quis error accusamus optio
-            porro.
-          </p>
-          <p>
-            Sequi explicabo veritatis dolores laborum delectus natus iste beatae
-            ut quae. Magni atque ex laborum, inventore blanditiis earum eum,
-            temporibus nulla placeat neque repellat aspernatur nesciunt quia
-            doloribus repudiandae facere quod voluptas necessitatibus nisi! Illo
-            odit quis error accusamus optio porro.
-          </p>
-
           <br />
-          <h2>Une narration d'un point de vue inhabituel</h2>
-          <p>
-            Nobis laudantium beatae id nesciunt, distinctio praesentium mollitia veniam cumque maxime iusto adipisci, quo porro minima omnis in? Esse nemo quas eius!
-            quibusdam praesentium in, autem
-            maiores explicabo cum mollitia iure ut. Eligendi, officiis ipsa?
-            Ipsam, optio. Cumque, fugit? Perspiciatis ipsam ipsum consectetur,
-            harum magnam eligendi, consequatur tenetur deleniti perferendis, hic
-            sapiente odio nam a minima veritatis vel? Sequi explicabo veritatis
-            dolores laborum delectus natus iste beatae ut quae. Magni atque ex
-            laborum, inventore blanditiis earum eum, temporibus nulla placeat
-            neque repellat aspernatur nesciunt quia doloribus repudiandae facere
-            quod voluptas necessitatibus nisi! Illo odit quis error accusamus
-            optio porro.
-          </p>
+          <div data-aos="fade-up" data-aos="zoom-in-right">
+            <h2>Une narration d'un point de vue inhabituel</h2>
+            <p>
+              Nobis laudantium beatae id nesciunt, distinctio praesentium
+              mollitia veniam cumque maxime iusto adipisci, quo porro minima
+              omnis in? Esse nemo quas eius! quibusdam praesentium in, autem
+              maiores explicabo cum mollitia iure ut. Eligendi, officiis ipsa?
+              Ipsam, optio. Cumque, fugit? Perspiciatis ipsam ipsum consectetur,
+              harum magnam eligendi, consequatur tenetur deleniti perferendis,
+              hic sapiente odio nam a minima veritatis vel? Sequi explicabo
+              veritatis dolores laborum delectus natus iste beatae ut quae.
+              Magni atque ex laborum, inventore blanditiis earum eum, temporibus
+              nulla placeat neque repellat aspernatur nesciunt quia doloribus
+              repudiandae facere quod voluptas necessitatibus nisi! Illo odit
+              quis error accusamus optio porro.
+            </p>
+          </div>
         </div>
       </section>
       <section id="testim" class="testim">
@@ -275,9 +325,9 @@
           </svg>
         </div>
         <!-- <div class="section-content"> -->
-        <h1>Notre Avis</h1>
+        <h1 data-aos="fade-up">Notre Avis</h1>
 
-        <div class="wrap">
+        <div class="wrap" data-aos="fade-up">
           <span id="left-arrow" class="arrow left">&lt;</span>
           <span id="right-arrow" class="arrow right">&gt;</span>
           <ul id="testim-dots" class="dots">
@@ -294,10 +344,13 @@
               <h2>Hadrien Allais</h2>
               <h3>Elève de terminale</h3>
               <p>
-                Qui in maiores dolores explicabo quidem placeat quos exercitationem magnam beatae, sapiente quisquam! Tempora, laborum, eius dolor reprehenderit ipsam distinctio eaque modi nostrum explicabo excepturi esse quas libero maxime accusamus.
-                , sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco.
+                Qui in maiores dolores explicabo quidem placeat quos
+                exercitationem magnam beatae, sapiente quisquam! Tempora,
+                laborum, eius dolor reprehenderit ipsam distinctio eaque modi
+                nostrum explicabo excepturi esse quas libero maxime accusamus. ,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco.
               </p>
             </div>
 
@@ -308,9 +361,15 @@
               <h2>Charles SÉPUKOMENYSAPAIL</h2>
               <h3>Elève de terminale</h3>
               <p>
-                Praesentium, porro asperiores quod aliquam possimus dolor assumenda vero maiores repellat consectetur sint pariatur unde quae aperiam. Molestiae quis non facere corporis dignissimos sapiente libero consequuntur incidunt. Exercitationem, architecto soluta!
-                Quo exercitationem incidunt quaerat commodi iusto sapiente asperiores ullam est libero et molestiae explicabo laborum nam animi officia eius ducimus velit eligendi itaque odio, blanditiis maxime debitis aut quod. Odio!
-                </p>
+                Praesentium, porro asperiores quod aliquam possimus dolor
+                assumenda vero maiores repellat consectetur sint pariatur unde
+                quae aperiam. Molestiae quis non facere corporis dignissimos
+                sapiente libero consequuntur incidunt. Exercitationem,
+                architecto soluta! Quo exercitationem incidunt quaerat commodi
+                iusto sapiente asperiores ullam est libero et molestiae
+                explicabo laborum nam animi officia eius ducimus velit eligendi
+                itaque odio, blanditiis maxime debitis aut quod. Odio!
+              </p>
             </div>
             <div class="testim-card">
               <div class="img">
@@ -319,9 +378,14 @@
               <h2>Aloys Cherrier</h2>
               <h3>Elève de terminale</h3>
               <p>
-                Deleniti officiis quisquam voluptatem, quibusdam esse soluta ad fugit ducimus laboriosam recusandae reprehenderit, nemo, inventore deserunt cum quidem. Tenetur dicta odit nostrum tempora cum voluptatibus, earum illum laborum placeat repellat.
-                Repellat iure ut impedit? Eum omnis voluptas neque illum possimus dolores molestiae consequatur nemo, maiores nihil, excepturi minus consequuntur id minima distinctio.
-                </p>
+                Deleniti officiis quisquam voluptatem, quibusdam esse soluta ad
+                fugit ducimus laboriosam recusandae reprehenderit, nemo,
+                inventore deserunt cum quidem. Tenetur dicta odit nostrum
+                tempora cum voluptatibus, earum illum laborum placeat repellat.
+                Repellat iure ut impedit? Eum omnis voluptas neque illum
+                possimus dolores molestiae consequatur nemo, maiores nihil,
+                excepturi minus consequuntur id minima distinctio.
+              </p>
             </div>
             <div class="testim-card">
               <div class="img">
@@ -330,8 +394,13 @@
               <h2>Elvis Presley</h2>
               <h3>Mec Random</h3>
               <p>
-                Veritatis expedita voluptates numquam temporibus perspiciatis vitae sequi laudantium corporis dolor ex! Perspiciatis voluptates iusto explicabo non maxime aspernatur, ipsum labore nesciunt, qui quibusdam delectus, dolores sint magni laudantium quos?
-                Fugiat sunt necessitatibus porro cum molestias. Maxime nam tempora ab iste eveniet, consectetur, totam aspernatur explicabo officia quibusdam, fugiat quaerat eum ipsa.
+                Veritatis expedita voluptates numquam temporibus perspiciatis
+                vitae sequi laudantium corporis dolor ex! Perspiciatis
+                voluptates iusto explicabo non maxime aspernatur, ipsum labore
+                nesciunt, qui quibusdam delectus, dolores sint magni laudantium
+                quos? Fugiat sunt necessitatibus porro cum molestias. Maxime nam
+                tempora ab iste eveniet, consectetur, totam aspernatur explicabo
+                officia quibusdam, fugiat quaerat eum ipsa.
               </p>
             </div>
           </div>
@@ -346,4 +415,7 @@
       <a href="legal.html">mentions légales</a>
     </footer>
   </body>
+  <script>
+    AOS.init();
+  </script>
 </html>

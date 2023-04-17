@@ -15,6 +15,13 @@ main {
   background-color: lightblue;
 }
 
+footer {
+  overflow: hidden;
+}
+
+section {
+  overflow: hidden;
+}
 section .section-content {
   padding: 4em 10%;
 }
