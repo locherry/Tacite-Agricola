@@ -42,7 +42,7 @@ function type(chatNumber) {
       if (i == letters.length - 1) {
         isTyping = false;
       }
-    }, typeSpeed * i);
+    }, typeSpeed * i + 3000);
   });
 }
 type(0);
@@ -233,10 +233,12 @@ const observer = new IntersectionObserver((entries) => {
       linkList[sectionList.indexOf(entry.target)].classList.add("active");
     }
   }
-  if(!document.querySelector('.nav-link').classList.contains('active')){
-    document.querySelector('.scroll-top').classList.add('visible')
-  } else if (document.querySelector('.scroll-top').classList.contains('visible')){
-    document.querySelector('.scroll-top').classList.remove('visible')
+  if (!document.querySelector(".nav-link").classList.contains("active")) {
+    document.querySelector(".scroll-top").classList.add("visible");
+  } else if (
+    document.querySelector(".scroll-top").classList.contains("visible")
+  ) {
+    document.querySelector(".scroll-top").classList.remove("visible");
   }
 }, options);
 
@@ -245,3 +247,14 @@ sections.forEach((section) => {
   observer.observe(section);
 });
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.documentElement.style.overflow = 'hidden'
+  setTimeout(() => {
+    document.documentElement.style.overflow = 'visible'
+
+    document.querySelector(".loading-screen").classList.add("invisible");
+    window.scrollTo(0, 0);
+  }, 3000);
+});
