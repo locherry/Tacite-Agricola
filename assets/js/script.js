@@ -204,3 +204,38 @@ const menuActivate = function () {
 
 hamburger.addEventListener("click", menuActivate);
 menu.addEventListener("click", menuActivate);
+
+// Auto highlight active section
+
+// newSpan = document.createElement("span");
+// newSpan.style.position = "fixed";
+// newSpan.style.backgroundColor = "red";
+// newSpan.style.height = "2px";
+// newSpan.style.width = "100%";
+// newSpan.style.top = "50%";
+// newSpan.style.left = "0";
+// document.querySelector("body").appendChild(newSpan);
+
+const options = {
+  // root: document.querySelector("#scrollArea"),
+  rootMargin: "-50% 0px",
+  // threshold: 1.0,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  const sectionList = [...sections];
+  const linkList = [...document.querySelectorAll(".nav-link")];
+  for (const entry of entries) {
+    console.log(entries, entry);
+    if (entry.isIntersecting) {
+      linkList.forEach((link) => {
+        link.classList.remove("active");
+      });
+      linkList[sectionList.indexOf(entry.target)].classList.add("active");
+    }
+  }
+}, options);
+const sections = document.querySelectorAll("section");
+sections.forEach((section) => {
+  observer.observe(section);
+});
