@@ -1,108 +1,98 @@
 //ChatBubble Animation
 
-setTimeout(() => {
-  let chatBubble = document.querySelector(".chat-bubble");
+const chatBubble = document.querySelector(".chat-bubble");
+const chatTexts = document.querySelectorAll(".chat-bubble p-data");
+const nextBtn = document.querySelector("button.next");
+const prevBtn = document.querySelector("button.previous");
 
-  let chatTexts = document.querySelectorAll(".chat-bubble p-data");
+let chatNumber = 0;
+let typeSpeed = 30;
+let isTyping = false;
 
-  function textToArray(text) {
-    array = text.split("").map((e, i) => {
-      if (e != "<" && text[i + 1] != ">" && text[i + 2] != ">" && e != ">") {
-        return e;
-      } else if (
-        e == "<" &&
-        text[i + 1] == "b" &&
-        text[i + 2] == "r" &&
-        text[i + 3] == ">"
-      ) {
-        return "<br>";
-      }
-      return "";
-    });
-    let filteredArray = array.filter(
-      (letter, i) =>
-        (letter !== " " || array[i + 1] !== " ") &&
-        letter != "\n" &&
-        letter != ""
-    );
-    return filteredArray;
+function type(chatNumber) {
+
+
+  if (document.querySelector(".chat-bubble p")) {
+    document.querySelector(".chat-bubble p").remove();
   }
 
-  let typeSpeed = 30;
-  let isTyping = false;
-  function type(chatNumber) {
+  newP = document.createElement("p");
+  chatBubble.insertBefore(newP, chatBubble.firstChild);
+
+  letters = textToArray(chatTexts[chatNumber].innerHTML);
+
+  let i = 0;
+
+  if (isTyping) {
+    if (typeof letterAdder != "undefined") {
+      clearInterval(letterAdder);
+    }
+  }
+
+  letterAdder = setInterval(() => {
     isTyping = true;
 
-    if (document.querySelector(".chat-bubble p")) {
-      document.querySelector(".chat-bubble p").remove();
+    letter = letters[i];
+    newP.innerHTML = newP.innerHTML + letter;
+    i++;
+    document.querySelector(".chat-bubble").click();
+    if (i == letters.length - 1) {
+      clearInterval(letterAdder);
+      isTyping = false;
     }
-
-    newP = document.createElement("p");
-    chatBubble.insertBefore(newP, chatBubble.firstChild);
-
-    letters = textToArray(chatTexts[chatNumber].innerHTML);
-
-    let i = 0;
-    letterAdder = setInterval(() => {
-      letter = letters[i];
-      newP.innerHTML = newP.innerHTML + letter;
-      i++;
-      document.querySelector(".chat-bubble").click()
-      if (i == letters.length - 1) {
-        clearInterval(letterAdder);
-        isTyping = false;
-      }
-    }, typeSpeed);
-
-    // setTimeout(() => {
-    //   clearInterval(letterAdder);
-    //   isTyping = false;
-    // }, typeSpeed * letters.length);
-    // letters.forEach((letter, i) => {
-    //   setTimeout(function () {
-    //     newP.innerHTML = newP.innerHTML + letter;
-    //     if (i == letters.length - 1) {
-    //       isTyping = false;
-    //     }
-    //   }, typeSpeed * i);
-    // });
-  }
-  type(0);
-
-  let chatNumber = 0;
-
-  function changeText(number) {
-    chatNumber += number;
-    type(chatNumber);
+  }, typeSpeed);
+  
+  // disable or reable arrow button
+  if (chatNumber == 0) {
+    prevBtn.setAttribute("disabled", "");
+  } else if (chatNumber == chatTexts.length - 1) {
+    nextBtn.setAttribute("disabled", "");
   }
 
-  nextBtn = document.querySelector("button.next");
-  prevBtn = document.querySelector("button.previous");
-  nextBtn.addEventListener("click", (e) => {
-    if (!isTyping) {
-      chatNumber += 1;
-      type(chatNumber);
-      if (chatNumber == chatTexts.length - 1) {
-        nextBtn.setAttribute("disabled", "");
-      }
-      if (prevBtn.hasAttribute("disabled")) {
-        prevBtn.removeAttribute("disabled");
-      }
-    }
-  });
+}
 
-  prevBtn.addEventListener("click", (e) => {
-    if (!isTyping) {
-      chatNumber -= 1;
-      type(chatNumber);
-      if (chatNumber == 0) {
-        prevBtn.setAttribute("disabled", "");
-      }
-      if (nextBtn.hasAttribute("disabled")) {
-        nextBtn.removeAttribute("disabled");
-      }
+function textToArray(text) {
+  array = text.split("").map((e, i) => {
+    if (e != "<" && text[i + 1] != ">" && text[i + 2] != ">" && e != ">") {
+      return e;
+    } else if (
+      e == "<" &&
+      text[i + 1] == "b" &&
+      text[i + 2] == "r" &&
+      text[i + 3] == ">"
+    ) {
+      return "<br>";
     }
+    return "";
   });
+  let filteredArray = array.filter(
+    (letter, i) =>
+      (letter !== " " || array[i + 1] !== " ") &&
+      letter != "\n" &&
+      letter != ""
+  );
+  return filteredArray;
+}
+
+nextBtn.addEventListener("click", (e) => {
+  chatNumber += 1;
+  type(chatNumber);
+  if (prevBtn.hasAttribute("disabled")) {
+    prevBtn.removeAttribute("disabled");
+  }
+});
+
+prevBtn.addEventListener("click", (e) => {
+  chatNumber -= 1;
+  type(chatNumber);
+  if (nextBtn.hasAttribute("disabled")) {
+    nextBtn.removeAttribute("disabled");
+  }
+  // disable or reable arrow button
+});
+
+setTimeout(() => {
+  type(chatNumber);
 }, 3000);
 
 // Review caroussel
