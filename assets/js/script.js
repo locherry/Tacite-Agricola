@@ -28,7 +28,7 @@ setTimeout(() => {
     return filteredArray;
   }
 
-  let typeSpeed = 20;
+  let typeSpeed = 30;
   let isTyping = false;
   function type(chatNumber) {
     isTyping = true;
@@ -41,14 +41,31 @@ setTimeout(() => {
     chatBubble.insertBefore(newP, chatBubble.firstChild);
 
     letters = textToArray(chatTexts[chatNumber].innerHTML);
-    letters.forEach((letter, i) => {
-      setTimeout(function () {
-        newP.innerHTML = newP.innerHTML + letter;
-        if (i == letters.length - 1) {
-          isTyping = false;
-        }
-      }, typeSpeed * i);
-    });
+
+    let i = 0;
+    letterAdder = setInterval(() => {
+      letter = letters[i];
+      newP.innerHTML = newP.innerHTML + letter;
+      i++;
+      document.querySelector(".chat-bubble").click()
+      if (i == letters.length - 1) {
+        clearInterval(letterAdder);
+        isTyping = false;
+      }
+    }, typeSpeed);
+
+    // setTimeout(() => {
+    //   clearInterval(letterAdder);
+    //   isTyping = false;
+    // }, typeSpeed * letters.length);
+    // letters.forEach((letter, i) => {
+    //   setTimeout(function () {
+    //     newP.innerHTML = newP.innerHTML + letter;
+    //     if (i == letters.length - 1) {
+    //       isTyping = false;
+    //     }
+    //   }, typeSpeed * i);
+    // });
   }
   type(0);
 
