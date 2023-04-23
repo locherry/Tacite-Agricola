@@ -623,11 +623,11 @@ section#testim h1:after {
 }
 section#testim .wrap {
   position: relative;
-  width: 100%;
-  max-width: 1020px;
   padding: 40px 20px;
   max-width: 700px;
   margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 section#testim .arrow {
   display: block;
@@ -895,7 +895,6 @@ header .scroll-top {
   padding: 5px;
   line-height: 2px;
   border-radius: 8px;
-  cursor: pointer;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 0px 5px 2px #8b8b8b;
@@ -912,6 +911,7 @@ header .scroll-top:focus, header .scroll-top:hover {
   background-color: #ea830e;
 }
 header .scroll-top.visible {
+  cursor: pointer;
   opacity: 1;
   bottom: 20px;
 }

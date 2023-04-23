@@ -10,8 +10,6 @@ let typeSpeed = 30;
 let isTyping = false;
 
 function type(chatNumber) {
-
-
   if (document.querySelector(".chat-bubble p")) {
     document.querySelector(".chat-bubble p").remove();
   }
@@ -41,14 +39,13 @@ function type(chatNumber) {
       isTyping = false;
     }
   }, typeSpeed);
-  
+
   // disable or reable arrow button
   if (chatNumber == 0) {
     prevBtn.setAttribute("disabled", "");
   } else if (chatNumber == chatTexts.length - 1) {
     nextBtn.setAttribute("disabled", "");
   }
-
 }
 
 function textToArray(text) {
@@ -67,9 +64,7 @@ function textToArray(text) {
   });
   let filteredArray = array.filter(
     (letter, i) =>
-      (letter !== " " || array[i + 1] !== " ") &&
-      letter != "\n" &&
-      letter != ""
+      (letter !== " " || array[i + 1] !== " ") && letter != "\n" && letter != ""
   );
   return filteredArray;
 }
@@ -142,10 +137,22 @@ window.onload = function () {
     currentActive = currentSlide;
 
     clearTimeout(testimTimer);
-    testimTimer = setTimeout(function () {
-      playSlide((currentSlide += 1));
-    }, testimSpeed);
+    if (document.activeElement != testim.querySelector(".wrap")) {
+      testimTimer = setTimeout(function () {
+        playSlide((currentSlide += 1));
+      }, testimSpeed);
+    } else {
+      testimTimer = setTimeout(function () {
+        playSlide((currentSlide += 1));
+      }, testimSpeed * 6);
+    }
   }
+  // testimTimer = setInterval(() => {
+  //   console.log(document.activeElement);
+  //   if (document.activeElement != testim.querySelector(".wrap")) {
+  //     playSlide((currentSlide += 1));
+  //   }
+  // }, testimSpeed);
 
   testimLeftArrow.addEventListener("click", function () {
     playSlide((currentSlide -= 1));
@@ -165,24 +172,17 @@ window.onload = function () {
 
   // keyboard shortcuts
   document.addEventListener("keyup", function (e) {
-    switch (e.keyCode) {
-      case 37:
-        testimLeftArrow.click();
-        break;
+    e.preventDefault();
+    e.stopPropagation();
 
-      case 39:
-        testimRightArrow.click();
-        break;
-
-      case 39:
-        testimRightArrow.click();
-        break;
-
-      default:
-        break;
+    if (e.key == "ArrowLeft") {
+      testimLeftArrow.click();
+    } else if (e.key == "ArrowRight") {
+      testimRightArrow.click();
     }
   });
 
+  // mobile version
   testim.addEventListener("touchstart", function (e) {
     touchStartPos = e.changedTouches[0].clientX;
   });
