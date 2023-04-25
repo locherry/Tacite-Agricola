@@ -501,14 +501,14 @@ footer a {
 .agricola-bubble div.chat-bubble .button-container button.pulse::before {
   -webkit-animation: pulsing 2s linear infinite;
           animation: pulsing 2s linear infinite;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
 }
 .agricola-bubble div.chat-bubble .button-container button.pulse::after {
   -webkit-animation: pulsing2 2s linear infinite;
           animation: pulsing2 2s linear infinite;
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
 }
 @-webkit-keyframes pulsing {
   0% {
