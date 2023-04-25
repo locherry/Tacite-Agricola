@@ -75,6 +75,9 @@ nextBtn.addEventListener("click", (e) => {
   if (prevBtn.hasAttribute("disabled")) {
     prevBtn.removeAttribute("disabled");
   }
+  if (nextBtn.classList.contains("pulse")) {
+    nextBtn.classList.remove("pulse");
+  }
 });
 
 prevBtn.addEventListener("click", (e) => {

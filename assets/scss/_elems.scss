@@ -43,6 +43,8 @@
                 text-decoration: none;
                 transition: all .3s ease-in-out;
                 font-weight: bold;
+                position: relative;
+                z-index: 3;
 
                 &:hover {
                     color: #fff;
@@ -64,6 +66,104 @@
                     border-color: initial;
                     box-shadow: initial;
                 }
+
+                &.pulse {
+
+                    &:hover::before,
+                    &:hover::after,
+                    &:focus::before,
+                    &:focus::after {
+                        background-color: #0a58ca;
+                    }
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        z-index: -1;
+                        border-radius: .25rem;
+                        animation-delay: 6s;
+                        opacity: 0;
+                        background-color: orangered;
+                        transition: all .3s;
+                    }
+
+                    &::before {
+                        animation: pulsing 2s linear infinite;
+                        animation-delay: 6s;
+
+                    }
+
+                    &::after {
+                        animation: pulsing2 2s linear infinite;
+                        animation-delay: 6s;
+                    }
+                }
+
+                @keyframes pulsing {
+                    0% {
+                        opacity: 1;
+                        transform: scaleY(1) scaleX(1); 
+
+                    }
+
+                    20% {
+                        opacity: 0.5;
+                    }
+
+                    70% {
+                        opacity: 0.2;
+                        transform: scaleY(1.4) scaleX(1.4);
+                    }
+
+                    80% {
+                        opacity: 0;
+                        transform: scaleY(1.4) scaleX(1.4);
+                    }
+
+                    90% {
+                        opacity: 0;
+                        transform: scaleY(1) scaleX(1);
+                    }
+                }
+
+                @keyframes pulsing2 {
+                    0% {
+                        opacity: 1;
+                        transform: scaleY(1) scaleX(1);
+                    }
+
+                    20% {
+                        opacity: 0.5;
+                    }
+
+                    70% {
+                        opacity: 0.2;
+                        transform: scaleY(1.8) scaleX(1.8);
+                    }
+
+                    80% {
+                        opacity: 0;
+                        transform: scaleY(1.8) scaleX(1.8);
+                    }
+
+                    90% {
+                        opacity: 0;
+                        transform: scaleY(1) scaleX(1);
+                    }
+                }
+
+                // span {
+                //     background-color: slategrey;
+                //     position: absolute;
+                //     top: 120%;
+                //     left:50%;
+                //     transform: translate(-50%);
+                // }
             }
         }
 
