@@ -107,7 +107,7 @@
                 @keyframes pulsing {
                     0% {
                         opacity: 1;
-                        transform: scaleY(1) scaleX(1); 
+                        transform: scaleY(1) scaleX(1);
 
                     }
 
@@ -297,6 +297,56 @@
 
         h1 {
             font-size: 24px;
+        }
+    }
+}
+
+.typing-container {
+
+    h1 {
+        font-size: 2.5rem;
+        padding: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        text-align: center;
+        overflow: hidden;
+
+        span.typed-text {
+            font-weight: normal;
+            color: #dd7732;
+        }
+
+        span.cursor {
+            display: inline-block;
+            background-color: #ccc;
+            margin-left: 0.1rem;
+            width: 3px;
+            animation: blink 1s infinite;
+            &.typing {
+                animation: none;
+            }
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            background-color: #ccc;
+        }
+
+        49% {
+            background-color: #ccc;
+        }
+
+        50% {
+            background-color: transparent;
+        }
+
+        99% {
+            background-color: transparent;
+        }
+
+        100% {
+            background-color: #ccc;
         }
     }
 }
