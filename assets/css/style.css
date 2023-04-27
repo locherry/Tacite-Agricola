@@ -2021,8 +2021,9 @@ header .scroll-top::before {
   content: "➜";
   color: #282828;
   position: absolute;
-  left: 25%;
-  bottom: 50%;
+  left: 0;
+  right: 0;
+  bottom: 70%;
   transform: rotate(-90deg);
 }
 header .scroll-top:focus, header .scroll-top:hover {
