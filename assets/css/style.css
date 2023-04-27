@@ -795,7 +795,7 @@ section#testim h1:after {
 section#testim .wrap {
   position: relative;
   padding: 40px 20px;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -1038,6 +1038,12 @@ section#testim .cont .testim-card.inactive p {
   to {
     opacity: 0;
     transform: scale(0);
+  }
+}
+@media only screen and (max-width: 880px) {
+  section#testim p {
+    font-size: smaller !important;
+    font-weight: lighter !important;
   }
 }
 
