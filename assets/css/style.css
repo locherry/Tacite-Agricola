@@ -1387,6 +1387,7 @@ section#atypique {
   height: 300px;
   background-color: black;
   background-position: center;
+  background-repeat: no-repeat;
   flex-shrink: 0;
   background-size: 100%;
   transition: background-size 0.3s;
@@ -1428,6 +1429,7 @@ section#atypique {
   }
   .author-card-container .author-card .img {
     width: 100%;
+    height: 250px;
   }
 }
 .agricola-bubble {
@@ -1764,7 +1766,7 @@ section#testim .arrow {
   transform: scaleX(0.7) scaleY(1.5);
   transition: all 0.3s ease-in-out;
   padding: 5px;
-  z-index: 1;
+  z-index: 4;
 }
 section#testim .arrow:before {
   cursor: pointer;
@@ -1866,7 +1868,8 @@ section#testim .cont .testim-card.active .img img {
   -webkit-animation: testim-show 0.5s ease-in-out forwards;
           animation: testim-show 0.5s ease-in-out forwards;
 }
-section#testim .cont .testim-card.active h2, section#testim .cont .testim-card.active h3 {
+section#testim .cont .testim-card.active h2,
+section#testim .cont .testim-card.active h3 {
   -webkit-animation: testim-content-in 0.4s ease-in-out forwards;
           animation: testim-content-in 0.4s ease-in-out forwards;
 }
@@ -1878,7 +1881,8 @@ section#testim .cont .testim-card.inactive .img img {
   -webkit-animation: testim-hide 0.5s ease-in-out forwards;
           animation: testim-hide 0.5s ease-in-out forwards;
 }
-section#testim .cont .testim-card.inactive h2, section#testim .cont .testim-card.inactive h3 {
+section#testim .cont .testim-card.inactive h2,
+section#testim .cont .testim-card.inactive h3 {
   -webkit-animation: testim-content-out 0.4s ease-in-out forwards;
           animation: testim-content-out 0.4s ease-in-out forwards;
 }
@@ -1998,6 +2002,19 @@ section#testim .cont .testim-card.inactive p {
   section#testim p {
     font-size: smaller !important;
     font-weight: lighter !important;
+  }
+  section#testim .wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section#testim .wrap .testim-card {
+    margin: 0 0.75em;
+  }
+  section#testim .arrow.left {
+    left: 13px;
+  }
+  section#testim .arrow.right {
+    right: 13px;
   }
 }
 
