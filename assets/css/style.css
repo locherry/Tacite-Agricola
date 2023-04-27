@@ -2011,17 +2011,17 @@ section#testim .cont .testim-card.inactive p {
     margin: 0 0.75em;
   }
   section#testim .arrow.left {
-    left: 13px;
+    left: 17px;
   }
   section#testim .arrow.right {
-    right: 13px;
+    right: 17px;
   }
 }
 
 /*|| Navigation Bar Styles*/
 header .scroll-top {
   position: fixed;
-  z-index: 9999;
+  z-index: 99;
   right: 20px;
   bottom: 0;
   width: 30px;
