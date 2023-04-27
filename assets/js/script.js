@@ -247,7 +247,7 @@ const observer = new IntersectionObserver((entries) => {
         link.classList.remove("active");
       });
       linkList[sectionList.indexOf(entry.target)].classList.add("active");
-      console.log(linkList[sectionList.indexOf(entry.target)]);
+      //auto change url
       window.history.replaceState({}, null, linkList[sectionList.indexOf(entry.target)].getAttribute('href'));
     }
   }
