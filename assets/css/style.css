@@ -33,27 +33,6 @@ section#testim {
   color: white;
   background: linear-gradient(60deg, rgb(84, 58, 183) 0%, rgb(0, 172, 193) 100%);
 }
-section#atypique {
-  padding-top: 0;
-  background-color: white;
-}
-
-.section-changer {
-  position: relative;
-  transform: scaleY(0.5);
-  transform: translate(0, 20);
-}
-.section-changer svg {
-  margin: 0;
-  z-index: 99999999999;
-  bottom: 100%;
-  left: 0;
-  position: absolute;
-}
-.section-changer svg use {
-  fill: dodgerblue;
-  stroke: dodgerblue;
-}
 
 h1,
 h2,
@@ -419,6 +398,82 @@ footer a {
     height: 270px;
     float: none;
     margin: 0 auto;
+  }
+}
+section#atypique {
+  padding-top: 0;
+  background-color: white;
+}
+
+.author-card-container {
+  margin-top: 1em;
+}
+.author-card-container .author-card {
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(228, 234, 240);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+  max-width: 800px;
+  box-shadow: 0 0 0 0 rgba(10, 10, 10, 0.3);
+  transition: all 0.8s ease-in-out;
+}
+.author-card-container .author-card:hover {
+  box-shadow: 0 0 10px 3px rgba(70, 70, 70, 0.3);
+}
+.author-card-container .author-card:hover .img {
+  background-size: 110%;
+}
+.author-card-container .author-card .img {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  background-position: center;
+  flex-shrink: 0;
+  background-size: 100%;
+  transition: background-size 0.3s;
+  position: relative;
+}
+.author-card-container .author-card .img .author-name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: "constantine", serif;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5em;
+  border-radius: 8px;
+}
+.author-card-container .author-card .author-card-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0.5em;
+}
+.author-card-container .author-card:nth-child(1) .img {
+  background-image: url("../img/Edouard_Michel.jpg");
+}
+.author-card-container .author-card:nth-child(2) .img {
+  background-image: url("../img/Sacha_Cambier_De_Montravel.jpg");
+}
+.author-card-container .author-card p,
+.author-card-container .author-card h3 {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .author-card-container .author-card {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .author-card-container .author-card .img {
+    width: 100%;
   }
 }
 .agricola-bubble {
@@ -983,19 +1038,6 @@ section#testim .cont .testim-card.inactive p {
   to {
     opacity: 0;
     transform: scale(0);
-  }
-}
-@media all and (max-width: 300px) {
-  section#testim body {
-    font-size: 14px;
-  }
-}
-@media all and (max-width: 500px) {
-  section#testim .arrow {
-    font-size: 1.5em;
-  }
-  section#testim .cont div p {
-    line-height: 25px;
   }
 }
 
